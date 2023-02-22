@@ -19,7 +19,7 @@ puts "#{employee1[:first_name]} #{employee1[:last_name]} makes #{employee1[:sala
 
 class Employee
   # Easier way to do reader and writer methods.
-  attr_accessor :first_name, :last_name, :active
+  attr_accessor :first_name, :last_name, :active, :salary
 
   def initialize(input_options)
     @first_name = input_options[:first_name]
@@ -56,6 +56,13 @@ employee2.active = false
 p employee2.active
 
 class Manager < Employee
+  attr_accessor :employees
+
+  def initialize(input_options)
+    super
+    @employees = input_options[:employees]
+  end
+
   def send_report
     puts "sending emails..."
     #use emial sending library
@@ -63,6 +70,9 @@ class Manager < Employee
   end
 end
 
-manager = Manager.new({ first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true })
+manager = Manager.new({ first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2] })
 manager.print_info
 manager.send_report
+p manager.give_annual_raise
+
+p manager
