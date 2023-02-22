@@ -54,3 +54,15 @@ p employee1.first_name
 p employee2.last_name
 employee2.active = false
 p employee2.active
+
+class Manager < Employee
+  def send_report
+    puts "sending emails..."
+    #use emial sending library
+    puts "emails sent!"
+  end
+end
+
+manager = Manager.new({ first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true })
+manager.print_info
+manager.send_report

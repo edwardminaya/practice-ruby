@@ -14,26 +14,17 @@ puts "This item is #{item1[:color]} and costs #{item1[:price]}"
 
 # Using classes
 class StoreItems
-  def initialize(color, price, weight)
-    @color = color
-    @price = price
-    @wieght = weight
-  end
+  attr_accessor :color, :price, :weight, :price, :category
 
-  def color
-    @color
-  end
-
-  def price
-    @price
-  end
-
-  def weight
-    @weight
+  def initialize(input_items)
+    @color = input_items[:color]
+    @price = input_items[:price]
+    @wieght = input_items[:weight]
+    @category = "A"
   end
 
   def item_info
-    puts "This item is #{color} and costs $#{price}"
+    puts "This item is #{color} and costs $#{price} and belongs to  #{category}"
   end
 
   def change_price=(input_price)
@@ -45,9 +36,9 @@ class StoreItems
   end
 end
 
-item1 = StoreItems.new("blue", 20, 10)
-item2 = StoreItems.new("red", 100, 20)
-item3 = StoreItems.new("yellow", 50, 40)
+item1 = StoreItems.new({ color: "blue", price: 20, weight: 10 })
+item2 = StoreItems.new({ color: "red", price: 100, weight: 20 })
+item3 = StoreItems.new({ color: "yellow", price: 50, weight: 40 })
 item1.item_info
 item2.item_info
 item3.item_info
