@@ -1,9 +1,8 @@
-# employee should have the following: id, first_name, last_name, salary, active
-# below are the first two employees that should be in the initial table.
+# INITIAL EMPLOYEES
 entry1 = { Xid: 1, first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true }
 entry2 = { id: 2, first_name: "Majora", last_name: "Carter", salary: 70000, active: false }
 
-# Class created for an instances for each employee.
+# EMPLOYEE CLASS
 class Employee
   attr_accessor :id, :first_name, :last_name, :salary, :active
 
@@ -16,16 +15,26 @@ class Employee
   end
 end
 
-# Two instances of employees using the class
+# TWO INSTANCES FOR THE INITIAL EMPLOYEES
 employee1 = Employee.new(entry1)
 employee2 = Employee.new(entry2)
-# array to hold the two employee instances
+
+# ARRAY TO HOLD THE EMPLOYEE INSTANCES
 employees = []
 employees << employee1
 employees << employee2
 puts "EMPLOYEES (#{employees.length} TOTAL)"
 p employees
 
-# First prompt to ask user what they would like to do
-# Create, Read, Update, Delete or Quit
+# FIRST PROMPT FOR EACH OPTION
 puts "[C]reate [R]ead [U]pdate [D]elete [Q]uit: "
+user_entry = gets.chomp.upcase
+
+# CONDITIONAL FOR EACH OPTION
+if user_entry == "C"
+elsif user_entry == "R"
+elsif user_entry == "U"
+elsif user_entry == "D"
+elsif user_entry == "Q"
+else
+end
