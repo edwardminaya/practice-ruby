@@ -51,3 +51,64 @@ end
 tj = Person.new("Thomas", "Jefferson")
 puts tj.to_s
 puts tj
+
+# Exercise 5: Write a program that will average 3 numeric exam grades, return an average test score, a corresponding letter grade, and message stating the student is passing
+exam_scores = []
+3.times do
+  puts "Input exam grade: "
+  score = gets.chomp.to_i
+  exam_scores << score
+end
+
+def list_grade(array)
+  i = 1
+  array.each do |score|
+    puts "Exam #{i} score is: #{score}"
+    i += 1
+  end
+end
+
+def average_grade(array)
+  sum = 0
+  array.each do |score|
+    sum += score
+  end
+  puts "The average score is #{sum / array.length}"
+end
+
+def letter_grade(array)
+  sum = 0
+  array.each do |score|
+    sum += score
+  end
+  average_grade = sum / array.length
+  if average_grade < 59
+    puts "Grade: F"
+  elsif average_grade >= 60 && average_grade <= 69
+    puts "Grade: D"
+  elsif average_grade > 70 && average_grade <= 79
+    puts "Grade: C"
+  elsif average_grade >= 80 && average_grade <= 89
+    puts "Grade: B"
+  elsif average_grade >= 90
+    puts "Grade: A"
+  end
+end
+
+def pass_fail(array)
+  sum = 0
+  array.each do |score|
+    sum += score
+  end
+  average_grade = sum / array.length
+  if average_grade < 59
+    puts "Student is failling"
+  else
+    puts "Student is passing"
+  end
+end
+
+list_grade(exam_scores)
+average_grade(exam_scores)
+letter_grade(exam_scores)
+pass_fail(exam_scores)
