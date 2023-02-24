@@ -1,5 +1,5 @@
-# 1. VARIABLES, ARRAYS, AND LOOPS
-# Create a program that asks the user for their favorite 5 foods. Then display those foods as an array, using the p keyword.
+# # 1. VARIABLES, ARRAYS, AND LOOPS
+# # Create a program that asks the user for their favorite 5 foods. Then display those foods as an array, using the p keyword.
 # puts "what are your five favorite foods: "
 # fave_food = []
 # 5.times do
@@ -72,29 +72,54 @@
 # Group: Lucius Cho
 # Group: Sirius Luna
 # Group: Severus Draco
-group1 = []
-group2 = []
-group3 = []
-group4 = []
-while true
-  puts "enter each students name: (when your done type 'done')"
-  student_name = gets.chomp
-  if student_name == "done"
-    break
-  elsif group1.length < 2
-    group1 << student_name
-  elsif group2.length < 2
-    group2 << student_name
-  elsif group3.length < 2
-    group3 << student_name
-  elsif group4.length < 3
-    group4 << student_name
-  end
-end
 
-p group1
-p group2
-p group3
-p group4
+# all_groups = []
+# group = []
+# while true
+
+#   puts "enter a students name: (when finished enter 'done')"
+#   student_name = gets.chomp
+
+#   if student_name.downcase == "done"
+#     break
+#   end
+
+#   group << student_name
+
+#   if group.length == 2
+#     all_groups << group
+#     group = []
+#   end
+# end
+
+# all_groups.each do |group|
+#   puts "Group: #{group[0]} #{group[1]}"
+# end
 
 # Refactor the program to take an odd or even number of students. If odd, one group should have three students.
+all_groups = []
+group = []
+while true
+  i = 0
+  puts "enter a students name: (when finished enter 'done')"
+  student_name = gets.chomp
+
+  if student_name.downcase == "done"
+    break
+  end
+
+  group << student_name
+
+  if group.length == 2
+    all_groups << group
+    group = []
+  end
+  i += 1
+end
+
+all_groups.each do |group|
+  puts "Group: #{group[0]} #{group[1]}"
+end
+
+# Practice exercises link below.
+# https://gist.github.com/peterxjang/ba4fe8368a62e3f93768df01f6f4a963
